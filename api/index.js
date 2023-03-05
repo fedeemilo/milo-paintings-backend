@@ -10,8 +10,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
-app.use("/", (req, res) => {
-    res.send("HOME");
+app.get("/", (req, res) => {
+    res.send("Hello, world!");
 });
 app.use("/api/paintings", paintings);
 
