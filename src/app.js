@@ -10,6 +10,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
+app.get("/", (req, res) => {
+    req.send("HOME");
+});
 app.use("/api/paintings", paintings);
 
 const port = process.env.PORT;
