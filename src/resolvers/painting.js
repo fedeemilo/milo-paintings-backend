@@ -1,6 +1,6 @@
 const cloudinary = require("cloudinary").v2;
 const upload = require("../config/multer");
-const { Painting } = require("../models/Painting");
+const { Painting } = require("../models/painting");
 
 const getPaintings = async (req, res) => {
     const paintings = await Painting.find();
