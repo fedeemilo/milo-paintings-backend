@@ -1,8 +1,8 @@
 require("dotenv").config();
 const express = require("express");
 const app = express();
-const db = require("../config/db");
-const paintings = require("../routes/paintings");
+const db = require("../src/config/db");
+const paintings = require("../src/routes/paintings");
 
 db();
 
