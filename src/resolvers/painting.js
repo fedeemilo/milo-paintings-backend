@@ -80,9 +80,18 @@ const updatePainting = async (req, res) => {
     });
 };
 
+const DeletePainting = async (req, res) => {
+    const painting = await Painting.findByIdAndRemove(req.params.id);
+
+    if (!painting) return res.status(404).send("Painting not found");
+
+    res.json(painting);
+};
+
 module.exports = {
     createPainting,
     getPaintings,
     getPaintingById,
-    updatePainting
+    updatePainting,
+    DeletePainting
 };

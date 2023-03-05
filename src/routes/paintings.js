@@ -4,7 +4,8 @@ const {
     createPainting,
     getPaintings,
     getPaintingById,
-    updatePainting
+    updatePainting,
+    DeletePainting
 } = require("../resolvers/painting");
 
 router.get("/", getPaintings);
@@ -15,12 +16,6 @@ router.post("/", createPainting);
 
 router.put("/:id", updatePainting);
 
-// router.delete("/:id", async (req, res) => {
-//     const painting = await Painting.findByIdAndRemove(req.params.id);
-
-//     if (!painting) return res.status(404).send("Painting not found");
-
-//     res.json(painting);
-// });
+router.delete("/:id", DeletePainting);
 
 module.exports = router;
