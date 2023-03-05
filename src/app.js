@@ -11,7 +11,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 app.get("/", (req, res) => {
-    req.send("HOME");
+    res.send("HOME");
 });
 app.use("/api/paintings", paintings);
 
